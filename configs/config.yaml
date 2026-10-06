@@ -1,0 +1,55 @@
+project:
+  name: "factsieve"
+  version: "1.0.0"
+  random_seed: 42
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  generated_dir: "data/generated"
+  benchmark_file: "data/processed/benchmark_subset.jsonl"
+  samples_per_setting: 20  # Fast iteration default; can scale to 100 for full replication
+  settings:
+    - "zero_context"
+    - "noisy_context"
+    - "accurate_context"
+
+llm:
+  generator_model: "gemini-3.5-flash-lite"
+  judge_model: "gemini-3.5-flash-lite"
+  temperature: 0.0
+  max_output_tokens: 1024
+  cache_file: "data/generated/llm_cache.jsonl"
+
+extractors:
+  spacy_model: "en_core_web_sm"
+  claim_prompt_version: "v1"
+  triplet_prompt_version: "v1"
+  cache_file: "data/generated/extraction_cache.jsonl"
+
+verifiers:
+  nli:
+    model_name: "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+    batch_size: 16
+    max_length: 512
+    device: "auto"  # 'auto', 'cuda', or 'cpu'
+  semantic_similarity:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+    threshold: 0.75
+    batch_size: 32
+    device: "auto"
+  llm_judge:
+    prompt_version: "v1"
+    cache_file: "data/generated/judge_cache.jsonl"
+
+scoring:
+  # Aggregation rule: 'strict' (any contradiction -> hallucinated), 'soft' (majority vote)
+  aggregation_rule: "strict"
+  labels:
+    - "Entailment"
+    - "Neutral"
+    - "Contradiction"
+
+results:
+  plots_dir: "results/plots"
+  tables_dir: "results/tables"
