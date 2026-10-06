@@ -1,0 +1,2 @@
+Accuracy,Macro_F1,Hallucination_Precision,Hallucination_Recall,Hallucination_F1,accurate_context_Acc,accurate_context_F1,noisy_context_Acc,noisy_context_F1,zero_context_Acc,zero_context_F1
+0.8,0.5714,0.9286,0.9286,0.9286,0.6,0.45,0.8,0.5833,1.0,1.0

@@ -1,0 +1,51 @@
+{
+  "num_samples": 30,
+  "accuracy": 0.4,
+  "macro_f1": 0.25,
+  "hallucination_detection": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Entailment",
+      "Neutral",
+      "Contradiction"
+    ],
+    "matrix": [
+      [
+        12,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        10,
+        0
+      ]
+    ]
+  },
+  "by_setting": {
+    "accurate_context": {
+      "count": 10,
+      "accuracy": 0.4,
+      "macro_f1": 0.2424
+    },
+    "noisy_context": {
+      "count": 10,
+      "accuracy": 0.3,
+      "macro_f1": 0.2222
+    },
+    "zero_context": {
+      "count": 10,
+      "accuracy": 0.5,
+      "macro_f1": 0.2778
+    }
+  }
+}

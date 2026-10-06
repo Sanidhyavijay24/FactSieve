@@ -1,0 +1,3 @@
+Evidence Condition,Accuracy (%),Macro-F1,Hallucination F1
+Clean Ground Truth Reference,80.00%,0.5530,0.9091
+Noisy Context (with Distractors),100.00%,1.0000,1.0000

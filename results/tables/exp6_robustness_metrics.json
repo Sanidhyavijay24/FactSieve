@@ -1,0 +1,14 @@
+{
+  "num_samples": 10,
+  "clean_reference": {
+    "accuracy": 0.8,
+    "macro_f1": 0.553,
+    "hallucination_f1": 0.9091
+  },
+  "noisy_distractor_context": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "hallucination_f1": 1.0
+  },
+  "accuracy_delta": 0.2
+}

@@ -1,0 +1,4 @@
+Checker Strategy,Accuracy (%),Macro-F1,Hallucination Precision,Hallucination Recall,Hallucination F1,Accurate Context Acc,Noisy Context Acc,Zero Context Acc
+Triplets -> NLI (DeBERTa-v3),83.33%,0.5854,0.9286,0.9286,0.9286,70.0%,80.0%,100.0%
+Triplets -> LLM Judge (Gemini),90.00%,0.6221,1.0000,0.9286,0.9630,80.0%,90.0%,100.0%
+Triplets -> Semantic Similarity (MiniLM),40.00%,0.2500,0.0000,0.0000,0.0000,40.0%,30.0%,50.0%
